@@ -17,14 +17,16 @@ var bubble_map = new Datamap({
     Spain: 'red',
     Turkey: 'red',
     Germany: 'red',
-  }
+  },
+  done: function(datamap) {
+        }
 });
 
 bubble_map.bubbles([
   {
     name: 'San Francisco',
     fillKey: 'USA',
-    radius: 5,
+    radius: 15,
     latitude: 37.782158,
     longitude: -122.434356
   },
@@ -90,85 +92,19 @@ bubble_map.bubbles([
     radius: 5,
     latitude: 25.779232,
     longitude: -80.194345
-  },
-  {
-    name: 'Toronto',
-    fillKey: 'Canada',
-    radius: 5,
-    latitude: 43.676043,
-    longitude: -79.401404
-  },
-  {
-    name: 'Vancouver',
-    fillKey: 'Canada',
-    radius: 5,
-    latitude: 49.277355,
-    longitude: -123.121510
-  },
-  {
-    name: 'Paris',
-    fillKey: 'France',
-    radius: 5,
-    latitude: 48.861344,
-    longitude: 2.346717
-  },
-  {
-    name: 'London',
-    fillKey: 'England',
-    radius: 5,
-    latitude: 51.510697,
-    longitude: -0.135244
-  },
-  {
-    name: 'Rome',
-    fillKey: 'Italy',
-    radius: 5,
-    latitude: 41.897295,
-    longitude: 12.491366
-  },
-  {
-    name: 'Florence',
-    fillKey: 'Italy',
-    radius: 5,
-    latitude: 43.775000,
-    longitude: 11.253328
-  },
-  {
-    name: 'Moscow',
-    fillKey: 'Russia',
-    radius: 5,
-    latitude: 55.755975,
-    longitude: 37.625628
-  },
-  {
-    name: 'Madrid',
-    fillKey: 'Spain',
-    radius: 5,
-    latitude: 40.417442,
-    longitude: -3.700136
-  },
-  {
-    name: 'Istanbul',
-    fillKey: 'Turkey',
-    radius: 5,
-    latitude: 41.014648,
-    longitude: 28.895450
-  },
-  {
-    name: 'Munich',
-    fillKey: 'Germany',
-    radius: 5,
-    latitude: 48.141625,
-    longitude: 11.578915
   }
 ], {
   popupTemplate: function(geo, data) {
-    return '<div class="hoverinfo">' + data.name + '</div>'
+    return '<div class="hoverinfo">' + data.name + '</div>' + ""
   }
 });
+bubble_map.svg.selectAll('.bubbles').on('click', function(geo, data) {
 
+  var output = '';
+  for (var property in this) {
+console.log(property);
+  output += property + ': ' + this[property]+'; ';
+}
+console.log(output);
 
-
-
-
-
+});
