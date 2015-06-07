@@ -436,7 +436,7 @@
           return fillColor || fillData.defaultFill;
         })
         .on('click', function ( datum ) {
-          alert(datum.name);
+          updateChart(datum.name);
         })
         .on('mouseover', function ( datum ) {
           var $this = d3.select(this);

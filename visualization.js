@@ -98,13 +98,3 @@ bubble_map.bubbles([
     return '<div class="hoverinfo">' + data.name + '</div>' + ""
   }
 });
-bubble_map.svg.selectAll('.bubbles').on('click', function(geo, data) {
-
-  var output = '';
-  for (var property in this) {
-console.log(property);
-  output += property + ': ' + this[property]+'; ';
-}
-console.log(output);
-
-});
