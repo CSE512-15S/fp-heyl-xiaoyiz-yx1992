@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Instagram Map</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -12,6 +13,7 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
     <script src="http://datamaps.github.io/scripts/datamaps.world.min.js"></script>
     <script src="http://datamaps.github.io/scripts/datamaps.usa.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 </head>
 
 <body> 
@@ -27,6 +29,8 @@
   </header>
   <section id="MAP" class="beige">
     <div id="greca_1"></div>
+    <div id="circular_chart"></div>
+    <script src="chart.js" ></script>
     <div style="width:1100px; display:block; margin: auto auto">
       <div id="legend" style="position:absolute; margin-top: 480px; margin-left: 0px"><img src="img/legend.png" height="250"></div>
       <div id="container" style="position:relative; width: 1100px; height: 750px;"></div>
