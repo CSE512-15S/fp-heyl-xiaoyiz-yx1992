@@ -5,12 +5,6 @@ var width = 300,
 var largestScore = 1.0;
 var largestLike = 1.0;
 
-var svg = d3.select("#circular_chart").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
 function updateChart(name){
   d3.select("#circular_chart").select("svg").remove();
   largestScore = 1.0;
@@ -51,9 +45,8 @@ function updateChart(name){
 
     data.forEach(function(d) {
       d.color  =  d.color;
-      d.weight = +d.weight;
       d.score  = +d.score;
-      d.width  = +d.weight;
+      d.width  = 1;
       d.label  =  d.label;
       if (parseFloat(d.score) > largestScore) largestScore = parseFloat(d.score);
       if (parseFloat(d.avg_like) > largestLike) largestLike = parseFloat(d.avg_like);
@@ -83,18 +76,12 @@ function updateChart(name){
         .attr("d", outlineArc);  
 
     // calculate the weighted mean score
-    var score = 
-      data.reduce(function(a, b) {
-        return a + (b.score * b.weight); 
-      }, 0) / 
-      data.reduce(function(a, b) { 
-        return a + b.weight; 
-      }, 0);
+    var score = '?';
 
     svg.append("svg:text")
       .attr("class", "aster-score")
       .attr("dy", ".35em")
       .attr("text-anchor", "middle")
-      .text(Math.round(score));
+      .text(score);
   });
 }
