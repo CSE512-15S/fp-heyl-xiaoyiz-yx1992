@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Instagram Map</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="http://datamaps.github.io/scripts/datamaps.world.min.js"></script>
+    <script src="http://datamaps.github.io/scripts/datamaps.usa.min.js"></script>
+</head>
+
+<body> 
+  <header id="header" class="dark_grey">
+    <div style="position:relative; z-index:5">
+      <p class="main_title" style="border-top-width:14px;	border-bottom-width:14px;">World's GDP</p>
+      <p class="subtitle" style="color:#F2EDE7">~ from 1960 to 2013 ~</p>
+      <p class="intro-text" style="color:#F2EDE7">Money isn't everything, but it can be a good measurement of world's development. Discover how world's economy developed based on world's GDP (Gross Domestic Product) in current US$ from 1960 to 2013, based on <a href="http://data.worldbank.org/data-catalog/world-development-indicators" style="color: #DFD6C7; text-decoration:underline" >World Development Indicators</a> from The World Bank. See each year's world GDP map by sliding the slider, and hover over the country of the map to learn more about each country's GDP detail.</p>
+    </div>
+    <div style="position:relative; bottom:320px; z-index:0; text-align:center; opacity:.7">
+      <img src="img/puffpuff.gif">
+    </div>
+  </header>
+  <section id="MAP" class="beige">
+    <div id="greca_1"></div>
+    <div style="width:1100px; display:block; margin: auto auto">
+      <div id="legend" style="position:absolute; margin-top: 480px; margin-left: 0px"><img src="img/legend.png" height="250"></div>
+      <div id="container" style="position:relative; width: 1100px; height: 750px;"></div>
+    </div>
+  </section>
+  <section id="CREDIT" class="beige">
+    <p style="position:relative; text-align:center; color:#BFB6A7">Credit:<br>
+      Title Design: <a href="http://www.puffpuffproject.com/languages.html" style="color: #BBBBBB">Puffpuff</a><br>
+      Ranging method: <a href="http://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)#/media/File:Map_of_world_countries_by_GDP_(nominal)_in_US$.png" style="color: #BBBBBB">Wiki</a>
+    </p>
+  </section>
+    <script src="visualization.js"></script>
+
+</script>
+</body>
+</html>
