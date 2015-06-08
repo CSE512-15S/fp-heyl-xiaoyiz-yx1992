@@ -7,10 +7,10 @@ Created on Wed Jun 03 11:58:44 2015
 from string import whitespace
 import csv
 
-fout=open("sample.csv",'w')
+fout=open("sample_seatlle.csv",'w')
 header="wordlist,countlist,maxlike,totallike,avelike\n"
 fout.write(header)
-with open('.\\Data\\total.csv', 'rb') as csvfile:
+with open('.\\Data\\Seattle.csv', 'rb') as csvfile:
     wordlist=[]
     countlist=[]
     maxlike=[]
