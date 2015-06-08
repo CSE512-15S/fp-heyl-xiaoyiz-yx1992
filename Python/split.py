@@ -53,8 +53,11 @@ for root, dirs, files in os.walk('../Data'):
                         totallike[j]+=like
                         avelike[j]=totallike[j]/countlist[j]
                         
-            for i in range(len(wordlist)):
-                line=wordlist[i]+","+str(countlist[i])+","+str(maxlike[i])+","+str(totallike[i])+","+str(avelike[i])+"\n"
+            zipped=zip(wordlist,countlist,maxlike,totallike,avelike)
+            zipped.sort(key = lambda t: t[4],reverse=True)  
+            w,c,m,t,a=zip(*zipped)                       
+            for i in range(min(30,len(wordlist))):
+                line=w[i]+","+str(c[i])+","+str(m[i])+","+str(t[i])+","+str(a[i])+"\n"
                 fout.write(line)    
         
         fout.close()
