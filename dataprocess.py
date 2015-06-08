@@ -22,7 +22,7 @@ for root, dirs, files in os.walk('./Data'):
         if(filename!="total.csv"):
             outname=".//processed//"+filename
             fout=open(outname,'w')
-            header="score,countlist,avelike,img1,img2\n"
+            header="filter_name，score，avg_like,img1,img2,img3,img4\n"
             fout.write(header)
             openname=".//Data//"+filename
             with open(openname, 'rb') as csvfile:
@@ -58,6 +58,13 @@ for root, dirs, files in os.walk('./Data'):
                 for i in range(len(f)):
                     if len(l[i])>=4:
                         line=f[i]+","+str(c[i])+","+str(a[i])+","+str(l[i][0])+","+str(l[i][1])+","+str(l[i][2])+","+str(l[i][3])+"\n"
+                        fout.write(line)
+                    elif i<=3:
+                        line=f[i]+","+str(c[i])+","+str(a[i])+","+str(l[i][0])
+                        for j in range (len(l[i])):
+                            line+=","+str(l[i][j])
+                        for j in range(4-len(l[i])):
+                            line+=","
                         fout.write(line)    
             
             fout.close()
