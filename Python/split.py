@@ -11,7 +11,7 @@ import os
 for root, dirs, files in os.walk('../Data'):
     for filename in files:
         openname="..//Data//"+filename
-        outname="..//tag//"+filename
+        outname="..//tag_count//"+filename
         fout=open(outname,'w')
         header="wordlist,countlist,maxlike,totallike,avelike\n"
         fout.write(header)
@@ -54,7 +54,7 @@ for root, dirs, files in os.walk('../Data'):
                         avelike[j]=totallike[j]/countlist[j]
                         
             zipped=zip(wordlist,countlist,maxlike,totallike,avelike)
-            zipped.sort(key = lambda t: t[4],reverse=True)  
+            zipped.sort(key = lambda t: t[1],reverse=True)  
             w,c,m,t,a=zip(*zipped)                       
             for i in range(min(30,len(wordlist))):
                 line=w[i]+","+str(c[i])+","+str(m[i])+","+str(t[i])+","+str(a[i])+"\n"
