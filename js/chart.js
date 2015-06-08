@@ -75,13 +75,10 @@ function updateChart(name){
         .attr("class", "outlineArc")
         .attr("d", outlineArc);  
 
-    // calculate the weighted mean score
-    var score = '?';
-
     svg.append("svg:text")
       .attr("class", "aster-score")
       .attr("dy", ".35em")
       .attr("text-anchor", "middle")
-      .text(score);
+      .text(name);
   });
 }

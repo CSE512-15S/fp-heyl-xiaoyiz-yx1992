@@ -437,6 +437,7 @@
         })
         .on('click', function ( datum ) {
           updateChart(datum.name);
+          updateWordCloud(datum.name);
         })
         .on('mouseover', function ( datum ) {
           var $this = d3.select(this);
