@@ -65,6 +65,7 @@ for root, dirs, files in os.walk('./Data'):
                             line+=","+str(l[i][j])
                         for j in range(4-len(l[i])):
                             line+=","
+                        line+="\n"
                         fout.write(line)    
             
             fout.close()
