@@ -18,7 +18,7 @@ function updateChart(name){
     .attr('class', 'd3-tip')
     .offset([0, 0])
     .html(function(d) {
-      return "<div>" + d.data.label + ": <span style='color:orangered'>" + d.data.score + "</span></div>"
+      return "<div>" + d.data.filter_name + ": <span style='color:orangered'>" + d.data.score + "</span></div>"
       + "<img width='150px' src='" + d.data.img1 + "'>"
       + "<img width='150px' src='" + d.data.img2 + "'>";
     });
@@ -41,13 +41,13 @@ function updateChart(name){
 
   svg.call(tip);
 
-  d3.csv(name+'.csv', function(error, data) {
+  d3.csv('processed/'+name+'.csv', function(error, data) {
 
     data.forEach(function(d) {
-      d.color  =  d.color;
-      d.score  = +d.score;
+      d.color  = d.color;
+      d.score  = Math.log(d.score);
       d.width  = 1;
-      d.label  =  d.label;
+      d.filter_name  =  d.filter_name;
       if (parseFloat(d.score) > largestScore) largestScore = parseFloat(d.score);
       if (parseFloat(d.avg_like) > largestLike) largestLike = parseFloat(d.avg_like);
     });
