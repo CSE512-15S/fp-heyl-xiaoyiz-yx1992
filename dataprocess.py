@@ -18,7 +18,7 @@ filename="Seattle"
 openname=".\\Data\\"+filename+".csv"
 outname=filename+"_resample.csv"
 fout=open(outname,'w')
-header="score,countlist,totallike,avelike,img1,img2\n"
+header="score,countlist,avelike,img1,img2\n"
 fout.write(header)
 with open(openname, 'rb') as csvfile:
     filterlist=[]
