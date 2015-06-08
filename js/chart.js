@@ -41,7 +41,7 @@ function updateChart(name){
 
   svg.call(tip);
 
-  d3.csv('processed/'+name+'.csv', function(error, data) {
+  d3.csv('filter_data/'+name+'.csv', function(error, data) {
 
     data.forEach(function(d) {
       d.color  = d.color;
