@@ -22,7 +22,7 @@ for root, dirs, files in os.walk('./Data'):
         if(filename!="total.csv"):
             outname=".//processed//"+filename
             fout=open(outname,'w')
-            header="filter_name，score，avg_like,img1,img2,img3,img4\n"
+            header="filter_name,score,avg_like,img1,img2,img3,img4\n"
             fout.write(header)
             openname=".//Data//"+filename
             with open(openname, 'rb') as csvfile:
