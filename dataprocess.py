@@ -20,10 +20,11 @@ for root, dirs, files in os.walk('./Data'):
     for filename in files:
 
         if(filename!="total.csv"):
-            outname="Resample"+filename
+            outname=".//processed//"+filename
             fout=open(outname,'w')
             header="score,countlist,avelike,img1,img2\n"
             fout.write(header)
+            openname=".//Data//"+filename
             with open(openname, 'rb') as csvfile:
                 filterlist=[]
                 countlist=[]
@@ -55,7 +56,7 @@ for root, dirs, files in os.walk('./Data'):
                 zipped.sort(key = lambda t: t[1],reverse=True)     
                 f,c,a,l=zip(*zipped)
                 for i in range(len(f)):
-                    if c[i]>=4:
+                    if len(l[i])>=4:
                         line=f[i]+","+str(c[i])+","+str(a[i])+","+str(l[i][0])+","+str(l[i][1])+","+str(l[i][2])+","+str(l[i][3])+"\n"
                         fout.write(line)    
             
