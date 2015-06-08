@@ -12,12 +12,16 @@ var bubble_map = new Datamap({
     high: 'red'
   },
   data: {
-    'TX': { fillKey: 'high' },
-    'FL': { fillKey: 'high' },
-    'NC': { fillKey: 'high' },
-    'CA': { fillKey: 'high' },
+    'ID': { fillKey: 'high' },
     'NY': { fillKey: 'high' },
-    'CO': { fillKey: 'high' }
+    'OR': { fillKey: 'high' },
+    'TX': { fillKey: 'high' },
+    'CA': { fillKey: 'high' },
+    'MO': { fillKey: 'high' },
+    'VT': { fillKey: 'high' },
+    'MA': { fillKey: 'high' },
+    'MN': { fillKey: 'high' },
+    'WA': { fillKey: 'high' }
   }
 });
 
