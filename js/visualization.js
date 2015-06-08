@@ -4,7 +4,7 @@ var bubble_map = new Datamap({
   projection: 'mercator',
   geographyConfig: {
     popupOnHover: true,
-    highlightOnHover: true
+    highlightOnHover: false
   },
   fills: {
     defaultFill: '#ABDDA4',
