@@ -3,7 +3,7 @@ var bubble_map = new Datamap({
   scope: 'usa',
   projection: 'mercator',
   geographyConfig: {
-    popupOnHover: true,
+    popupOnHover: false,
     highlightOnHover: false
   },
   fills: {

@@ -18,15 +18,17 @@ function updateChart(name){
     .attr('class', 'd3-tip')
     .offset([0, 0])
     .html(function(d) {
-      return "<div>" + d.data.filter_name + ": <span style='color:orangered'>" + d.data.score + "</span></div>"
-      + "<img width='150px' src='" + d.data.img1 + "'>"
-      + "<img width='150px' src='" + d.data.img2 + "'>";
+      return "<div>" + d.data.filter_name + ": <span style='color:orangered'>" + d.data.score + Math.floor(Math.random() * 10) + "</span></div>"
+      + "<img width='80px' src='" + d.data.img1 + "'>"
+      + "<img width='80px' src='" + d.data.img2 + "'>"
+      + "<img width='80px' src='" + d.data.img3 + "'>"
+      + "<img width='80px' src='" + d.data.img4 + "'>";
     });
 
   var arc = d3.svg.arc()
     .innerRadius(innerRadius)
     .outerRadius(function (d) { 
-      return (radius - innerRadius) * (d.data.score / largestScore) + innerRadius; 
+      return (radius - innerRadius) * (Math.log(d.data.score) / Math.log(largestScore)) + innerRadius; 
     });
 
   var outlineArc = d3.svg.arc()
@@ -45,7 +47,7 @@ function updateChart(name){
 
     data.forEach(function(d) {
       d.color  = d.color;
-      d.score  = Math.log(d.score);
+      d.score  = d.score;
       d.width  = 1;
       d.filter_name  =  d.filter_name;
       if (parseFloat(d.score) > largestScore) largestScore = parseFloat(d.score);
@@ -57,8 +59,8 @@ function updateChart(name){
       .enter().append("path")
         .attr("fill", function(d) {
           domain = null,
-          range = ["white", "red"],
-          color = d3.scale.linear().domain([0,largestLike]).range(["white","red"]);
+          range = ["white", "green"],
+          color = d3.scale.linear().domain([0,largestLike]).range(["white","green"]);
           return color(d.data.avg_like);
         })
         .attr("class", "solidArc")
@@ -66,14 +68,6 @@ function updateChart(name){
         .attr("d", arc)
         .on('mouseover', tip.show)
         .on('mouseout', tip.hide);
-
-    var outerPath = svg.selectAll(".outlineArc")
-        .data(pie(data))
-      .enter().append("path")
-        .attr("fill", "none")
-        .attr("stroke", "gray")
-        .attr("class", "outlineArc")
-        .attr("d", outlineArc);  
 
     svg.append("svg:text")
       .attr("class", "aster-score")
