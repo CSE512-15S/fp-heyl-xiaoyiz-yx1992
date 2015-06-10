@@ -44,13 +44,7 @@ Xiaoyi Zhang\thanks{e-mail:xiaoyiz@cs.washington.edu}\\Computer Science \& Engin
 
 \begin{abstract}
 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-molestie consequat, vel illum dolore eu feugiat nulla facilisis at 
-vero eros et accumsan et iusto odio dignissim qui blandit praesent
-luptatum zzril delenit augue duis dolore te feugait nulla
-facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-aliquam erat volutpat.
+This project analyzes the relationship of Instagram filter data with location, number of likes and hashtag to give users filter suggestion on achieving more likes based on users' location and the photo content, and analyzes visual culture differences between the cities. It shows three types of data relationship: first, filter usage based on different cities; second, in each city the number of likes of each filter; third, in each city what hashtag are labeled most.
 
 Citations can be done this way~\cite{Jobs95} or this more concise 
 way~\shortcite{Jobs95}, depending upon the application.
@@ -83,29 +77,11 @@ delenit augue duis dolore te feugait nulla facilisi.~\cite{Park:2006:DSI}
 
 \section{Introduction}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+You may have ever scrolled through the Instagram filter list back and force worrying about which one to use, and how to make more people like it. But since culture background and contents varies a lot from photo to photo, it is hard to make a simple suggestion that let everyone like it. To solve this problem our project analyzes the Instagram filter data based on location, likes and hashtag.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+This project analyzes how filter usage are distributed in 50 cities, which are the cities with most population in each state of United States, and it also shows the number of likes for each filter. This shows the filter preference and how culture varies at different places. It also analyzes the number of hashtags been labeled on the posts for each city. 
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+The goal of this project is to give useful filter suggestion and showing visual culture and content differences for different states. 
 
 \section{Related Work}
 
@@ -239,6 +215,14 @@ pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.
 
 \section{Discussion}
+
+Computer Vision Analysis
+Since not all the photos are labeled with hashtags and not all the hashtags are correctly showing the content in each photo, using computer vision to analysis the real photo content, the style of the scenes and the major color theme may have stronger correlation with the filter types.
+Relationship with Time
+As the time changes people’s vision preference may also changes, so the preference of filters may shifts as the time changes, we can learn the relationship with filters, likes and time to learn how visual preference changes and give out more current filter suggestion.
+World Map
+Since all the location analysis are based on the United States, so culture variety may be less between each cities, to extend the data to world based to learn some culture different between continents may give us more meaningful data. But world-wise spread of the Instagram usage may be the limit of this extension.
+
 
 \section{Conclusion}
 
