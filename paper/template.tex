@@ -77,26 +77,49 @@ There are also some existing analytical tools for Instagram. Iconosquare (former
 
 \section{Methods}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+\subsection{Data Preparation}
+\subsection{Data Preparation}
+
+In order to find interesting pattern from the raw data, we use python script to process the data. We first explore the relationship between filter and number of likes. We ignore the location and get the whole table of filter, number of photos with this filter, maximal likes, average likes and total number of likes.  With the help of Tableau, we can see the following result in figure \ref{like-filter},\ref{normal} and \ref{no-normal}.
+
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=1.5in]{images/samplefigure}
-  \caption{Sample illustration.}
+  \includegraphics[width=3in]{images/sample_all_filter-like}
+  \caption{Likes and filters in Seattle}
+  \label{like-filter}
 \end{figure}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=3in]{images/sample_all_number-filter_sorted}
+  \caption{Number of photos in different filters}
+  \label{normal}
+\end{figure}
+\begin{figure}[ht]
+  \includegraphics[width=3in]{images/sample_all_number-filter_sorted_no-normal}
+  \centering
+  \caption{Number of photos in different filters. Normal excluded}
+  \label{no-normal}
+\end{figure}
+
+
+
+We can see that the normal filter appears dominantly. This is probably because normal filter is the default setting of Instagram. Therefore if people are not very familiar with Instagram, then they will hardly pick up advanced filters. So many filters use normal filter that most popular photos are using normal filters. If we remove the effect of normal filters, we can see that the curve of  number of photos on filters looks like an exponential function, which is an evidence that it may  follow the power law. It is reasonable, since power law is a common phenomenon in social network.
+In this way, we may design a recommendation system for filters:
+since normal filter is so common,
+we can help users to use other advanced filters,
+in this way users may obtain sense of accomplishment while achieving lots of likes.
+
+
+We also study the relationship between the likes and the hashtag. We create the table of word, total like, average like and maximal like for each city. The following chart is the result for Seattle.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=3in]{images/sample_Seattle_like_word}
+  \caption{Hot hashtags in Seattle}
+\end{figure}
+We do not find interesting pattern in the chart. We think the main reason is that we do not have enough data. Most hashtag appear only 1 or 2 times, which is too few to analyze. However, we can still observe that hashtags with popular photos are “meaningful”, that is , we can see some kind of trend from the hot hashtags. This can be used to notice users what is happening now in the city.
+
+
 
 \section{Future Work}
 
