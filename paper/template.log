@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  11 JUN 2015 03:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  11 JUN 2015 07:36
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **template.tex
 (./template.tex
@@ -430,8 +429,12 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 (Font)              scaled to size 9.19998pt on input line 97.
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
+Missing character: There is no ï in font ptmr7t!
+Missing character: There is no ¿ in font ptmr7t!
+Missing character: There is no ½ in font ptmr7t!
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 111.
 
  (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
@@ -558,7 +561,7 @@ ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive
 exmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/
 fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type
 1/urw/times/utmri8a.pfb>
-Output written on template.pdf (5 pages, 1238790 bytes).
+Output written on template.pdf (5 pages, 1238605 bytes).
 PDF statistics:
  136 PDF objects out of 1000 (max. 8388607)
  102 compressed objects within 2 object streams
