@@ -96,15 +96,60 @@ First, we get Instagram data from Instagram API which allows us to specify the s
 \text{\quad}        \}\\
     \}]
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=1.5in]{images/samplefigure}
-  \caption{Sample illustration.}
-\end{figure}
+
 
 \subsection{Data Analysis}
 
+In order to find interesting pattern from the raw data, we use python script to process the data. We first explore the relationship between filter and number of likes. We ignore the location and get the whole table of filter, number of photos with this filter, maximal likes, average likes and total number of likes.  With the help of Tableau, we can see the following result in figure \ref{like-filter},\ref{normal} and \ref{no-normal}.
+
+
+\begin{figure}[ht]
+  \centering
+\includegraphics[width=3in]{images/sample_all_filter-like}
+  \caption{Likes and filters in Seattle}
+  \label{like-filter}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=3in]{images/sample_all_number-filter_sorted}
+  \caption{Number of photos in different filters}
+  \label{normal}
+\end{figure}
+\begin{figure}[ht]
+  \includegraphics[width=3in]{images/sample_all_number-filter_sorted_no-normal}
+  \centering
+  \caption{Number of photos in different filters. Normal excluded}
+  \label{no-normal}
+\end{figure}
+
+
+We can see that the normal filter appears dominantly. This is probably because normal filter is the default setting of Instagram. Therefore if people are not very familiar with Instagram, then they will hardly pick up advanced filters. So many filters use normal filter that most popular photos are using normal filters. If we remove the effect of normal filters, we can see that the curve of  number of photos on filters looks like an exponential function, which is an evidence that it may  follow the power law...(line truncated)...
+In this way, we may design a recommendation system for filters:
+since normal filter is so common,
+we can help users to use other advanced filters,
+in this way users may obtain sense of accomplishment while achieving lots of likes.
+
+
+We also study the relationship between the likes and the hashtag. We create the table of word, total like, average like and maximal like for each city. The following chart is the result for Seattle.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=3in]{images/sample_Seattle_like_word}
+  \caption{Hot hashtags in Seattle}
+\end{figure}
+We do not find interesting pattern in the chart. We think the main reason is that we do not have enough data. Most hashtag appear only 1 or 2 times, which is too few to analyze. However, we can still observe that hashtags with popular photos are “meaningful”, that is , we can see some kind of trend from the hot hashtags. This can be used to notice users what is happening now in the city.
+
 \subsection{Function Design}
+There are three main functionality, focusing on location, filter and tag data.
+
+\subsubsection{Location}
+User can click on dark blue dot, which is the city with largest population in a state. Then, the system shows the filter and tag visualization result based in the specific location. We want to use location as a filter for visualization results.
+
+\subsubsection{Filter}
+In the filter visualization result, we want to show the average likes of photos using these filters. We also want to show how many photos using those filters, which indicates the popularity of each filter.
+
+\subsubsection{Tags}
+In the tags visualization result, we want to show the average likes of photos using these tags.
 
 \subsection{Visual Design}
 
@@ -114,10 +159,15 @@ First, we get Instagram data from Instagram API which allows us to specify the s
 
 \subsection{Results Discussion}
 
+We present our work in the poster session. We are happy to see that all of our audiences find great pleasure in our work. Out of our expectation, they seem to be very interested in the word cloud. It is amazing to see what is happening in different cities, and it is quite interesting to see the different culture directly. They are also interested in the recommendation for advanced filters. Some people say they may apply the recommendation to become fancy.
+
+
+However, they also express some confusion on the  design. Most people asked about the meaning of different colors on the map. This is reasonable, since the color is the most notable element in the design. They also asked about the meaning of the pie chart of the filters. We think this is because we do not provide enough text explanations. We have modified our final design  to meet the requirement of the audience.
+
 \subsection{Future Work}
 Since not all the photos are labeled with hashtags and not all the hashtags are correctly showing the content in each photo, using computer vision to analysis the real photo content, the style of the scenes and the major color theme may have stronger correlation with the filter types.
 
-As the time changes people’s vision preference may also changes, so the preference of filters may shifts as the time changes, we can learn the relationship with filters, likes and time to learn how visual preference changes and give out more current filter suggestion.
+As the time changes people's visual preference may also changes, so the preference of filters may shifts as the time changes, we can learn the relationship with filters, likes and time to learn how visual preference changes and give out more current filter suggestion.
 
 Since all the location analysis are based on the United States, so culture variety may be less between each cities, to extend the data to world based to learn some culture different between continents may give us more meaningful data. But world-wise spread of the Instagram usage may be the limit of this extension.
 
