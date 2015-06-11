@@ -31,18 +31,9 @@ Tags: clicking the city dot shows a words cloud with most popular tags shown up.
 
 ## Running Instructions
 
-<<<<<<< HEAD
 Our project page is at http://cse512-15s.github.io/fp-Heyl-xiaoyiz-yx1992/
 
 Access our visualization at http://www.xiaoyizhang.me/512
-=======
-Access our visualization at http://xiaoyizhang.me/fp/
-
-OR
-
-Clone the repo, run "python -m SimpleHTTPServer 8080" in the terminal under the repo directory.
-
-Open browser and navigate to http://localhost:8080
 
 ## Story Board
 
@@ -69,5 +60,3 @@ Yanling He: Design and implement the page layout, draw story board, presentation
 Xiaoyi Zhang: Implement interactive map with PI chart and hovering functions, presentation and writeup
 
 Xin Yang: Found data set and processing data, presentation and writeup
-
->>>>>>> origin/master
