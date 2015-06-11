@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Instagram Map</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="js/datamap.js"></script>
+    <script src="js/chart.js" ></script>
+    <script src="js/wordcloud.js"></script>
+    <script src="js/d3.layout.cloud.js"></script>
+</head>
+
+<body> 
+  <header id="header" class="dark_grey">
+    <div style="position:relative; z-index:5">
+      <p class="main_title" style="border-top-width:14px;	border-bottom-width:14px;">Instagram Data Analysis</p>
+      <p class="subtitle" style="color:#FFFFFF">~ filter & like & tag & location ~</p>
+      <p class="intro-text" style="color:#FFFFFF">Analyzing Instagram filter, number of likes, tags for different cities in the 50 States to show social culture differences and help select better filters. Clicking the city dot shows a chart showing the relationship of that city's popular filters with likes, and a words cloud with most popular tags. Hovering on the chart shows number of images using that filter and some sample images.</p>
+    </div>
+    <div style="position:relative; bottom:285px; z-index:0; text-align:center; opacity:.7">
+      <img src="img/instagram-logo.gif">
+    </div>
+  </header>
+  <section id="MAP" class="beige" style="height:900px; left:10%">
+    <div id="greca_1"></div>
+    <div style="display:block; margin: auto auto;">
+      <section>
+        <div id="container" style="position:relative; width: 1000px; height: 500px; float: left; margin-left: -50px;"></div>
+        <div id="wordcloud" style="position:absolute; left:20%; top:900px; margin-left: auto;
+  margin-right: auto;"></div>
+        <div id="circular_chart" style="position:absolute; left: 60%; top:450px"></div>
+      </section>
+    </div>
+  </section>
+  <section id="CREDIT" class="beige">
+    <p style="position:relative; text-align:center; color:#5185a6">Credit:<br>
+      Title Design: <a href="http://www.puffpuffproject.com/languages.html" style="color: #5185a6">Puffpuff</a><br>
+    </p>
+  </section>
+    <script src="js/visualization.js"></script>
+</body>
+</html>

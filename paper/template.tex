@@ -44,7 +44,7 @@ Xiaoyi Zhang\thanks{e-mail:xiaoyiz@cs.washington.edu}\\Computer Science \& Engin
 
 \begin{abstract}
 
-Because of the spread of the Internet, social platforms bacome big data pools. From there we can learn about the trends, culture and hot topics.  This project focuses on analyzing the data from Instagram. It shows the relationship of Instagram filter data with location and number of likes to give users filter suggestion on achieving more likes based on their location. It also analyzes the popular hashtags in different locations to show visual culture differences between different cities. 
+Because of the spread of the Internet, social platforms become big data pools. From there we can learn about the trends, culture and hot topics.  This project focuses on analyzing the data from Instagram. It shows the relationship of Instagram filter data with location and number of likes to give users filter suggestion on achieving more likes based on their location. It also analyzes the popular hashtags in different locations to show visual culture differences between different cities. 
 
 \end{abstract}
 
@@ -72,7 +72,7 @@ The goal of this project is to learn about visual culture and content difference
 \begin{figure}[ht]
   \centering
 \includegraphics[width=3in]{images/vis}
-  \caption{Word cloud design}
+  \caption{Visualization system design}
   \label{like-filter}
 \end{figure}
 
@@ -80,11 +80,19 @@ The goal of this project is to learn about visual culture and content difference
 
 Due to the popularity and the amount of data information, there are couple groups of people are also interested in the culture information reflected in the Instagram photo data. Hochman's Zooming into an Instagram city \cite{hochman13} \cite{hochman12} visualizes and analyzes samples from a data set of about 550,000 Instagram photos from New York City and Tokyo, by applying visualization and Cultural Analytics techniques. They show all the images in the collection. They download data based on latitude and longitude criteria and use specified tools to analyze the data. One interesting result of this paper is that there seem to be reoccurring spatio-temporal visual deviations in a specific time period and a set place. Based on those large sets of Instagram photos, they show how visual social media can be analyzed at multiple spatial and temporal scales. They also present analysis of social and cultural dynamics in specific places and particular times, and introduce new visualization techniques which can show tens of thousands of individual images sorted by their metadata or algorithmically extracted visual features. But as they only focuses on photo color and photo style, but our project cares more anout the label information and filter data. They shows the differences of visual styles in different time different cities, while we are analyzing the exact events and objects that people are captured and marked in different cities.
 
-There are also some existing analytical tools for Instagram. Iconosquare (formerly Statigram) \cite{iconosquare} provides useful statistics about Instagram. It can also respond to comments and monitor hashtags. Instagram-analytics \cite[simplymeasured] contains huge amount of raw instagram data for users. Instastats \cite{instastats} is python scripts to pull data from Instagram API. Those work shows us what data information are available from Instagram and our project uses some of the tools to get our desired data for analysis.
+There are also some existing analytical tools for Instagram. Iconosquare (formerly Statigram) \cite{iconosquare} provides useful statistics about Instagram. It can also respond to comments and monitor hashtags. Instagram-analytics \cite{simplymeasured} contains huge amount of raw instagram data for users. Instastats \cite{instastats} is python scripts to pull data from Instagram API. Those work shows us what data information are available from Instagram and our project uses some of the tools to get our desired data for analysis.
 
 \section{Methods}
 
-We implement a software tool for user to navigate the Instagram data. The implementation details are divided into four parts: data preparation: getting data from Instagram and sorted our desired data into useable csv format; Data analysis: we use table and chart to pre-analyze the data; Function design: our system filters data based on location, and visualizes filter and tag data; Visual style design: our system uses map to display location data, uses Aster chart to visualize filter data, and uses word cloud to visualize hashtag data.
+We implement a software tool for user to navigate the Instagram data. The implementation details are divided into four parts:
+
+Data preparation: getting data from Instagram and sorted our desired data into useable csv format.
+
+Data analysis: we use table and chart to pre-analyze the data.
+
+Function design: our system filters data based on location, and visualizes filter and tag data.
+
+Visual style design: our system uses map to display location data, uses Aster chart to visualize filter data, and uses word cloud to visualize hashtag data.
 
 \subsection{Data Preparation}
 
@@ -113,7 +121,7 @@ In our project, we are insisting in the basic and likes scopes including filter 
 \text{\quad}        \}\\
     \}]
 
-We found data collection process is painful. Instagram?s API has unpredictable behavior. For example, even if we indicate the number of post we want in query, its API will still give us different number of result in each run. Thus, in order to get enough data, we need to run multiple times and remove duplicate results.
+We found data collection process is painful. Instagram's API has unpredictable behavior. For example, even if we indicate the number of post we want in query, its API will still give us different number of result in each run. Thus, in order to get enough data, we need to run multiple times and remove duplicate results.
 
 
 \subsection{Data Analysis}
@@ -184,7 +192,7 @@ The project uses the map of United States. The color of the map is also chosen b
 
 \subsubsection{Filter - Aster Chart}
 
-When click on the city dot, an Aster chart that shows the relationship between the filters and likes for the selected city shows up. Larger slice means more posts for that filter and smaller slice means less posts for that filter, because the size can be related to the amount information. As for the color, lighter color of the chart slice means less likes for that filter, and darker color means more likes for that filter. Most liked one uses the brown color and the least liked one uses the yellow color where the colors are match the color of the map. The color for the rest filters are the color within this range and equally scaled. When mouse hovering on the slice, the slice turns into red color to use contrast color to indicate one filter type is selected, and a window pop up near by the mouse showing the detail information with the number of posts and likes and sample images for selected filter type. The color of the text information are using couple bright colors selected from Instagram logo which can gives the sense of users that they are viewing Instagram posts and draw some attention on the text because of the brightness. 
+When click on the city dot, an Aster chart\cite{aster} that shows the relationship between the filters and likes for the selected city shows up. Larger slice means more posts for that filter and smaller slice means less posts for that filter, because the size can be related to the amount information. As for the color, lighter color of the chart slice means less likes for that filter, and darker color means more likes for that filter. Most liked one uses the brown color and the least liked one uses the yellow color where the colors are match the color of the map. The color for the rest filters are the color within this range and equally scaled. When mouse hovering on the slice, the slice turns into red color to use contrast color to indicate one filter type is selected, and a window pop up near by the mouse showing the detail information with the number of posts and likes and sample images for selected filter type. The color of the text information are using couple bright colors selected from Instagram logo which can gives the sense of users that they are viewing Instagram posts and draw some attention on the text because of the brightness. 
 
 \begin{figure}[ht]
   \centering
@@ -194,7 +202,7 @@ When click on the city dot, an Aster chart that shows the relationship between t
 \end{figure}
 
 \subsubsection{Hashtags - Word Cloud}
-After clicking the city dot, there is also a words cloud with tags showing underneath the map. Larger size of text means more posts with that tag and smaller size of text means less posts with that tag. The color of the text are all bright colors with large contrast to distinguish words from words and also for user easy to read.
+After clicking the city dot, there is also a words cloud\cite{word} with tags showing underneath the map. Larger size of text means more posts with that tag and smaller size of text means less posts with that tag. The color of the text are all bright colors with large contrast to distinguish words from words and also for user easy to read.
 \begin{figure}[ht]
   \centering
 \includegraphics[width=3in]{images/word}
@@ -220,14 +228,11 @@ Since all the location analysis are based on the United States, so culture varie
 
 \section{Conclusion}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+We have completed a visualization project on Instagram data. We study the relationship between the likes and the hashtags, location and filter, which many people are caring about. We use Tableau to visualize and analyze the raw data which has been processed to a easy-to use form and find interesting patterns. Then we use d3 to create a webpage interactive data visualization work. We combine multiple tools including datamap, aster plot and word cloud.
 
+Compared with current existing Instagram analyzing tools, instead of focusing on individual user, we focus on big data on the whole Instagram community. We divide the data according to location, and in this way we detect culture different in different cities. This method can also be used in social science to study popular trend by collecting social network information. Also, we design a recommendation system, which is able to give general suggestions on choice of filters based on location. This may be improved with other advanced techniques like machine learning and computer vision techniques.
+
+To summarize, it is amazing to visualize social network information data on real geographical map. This kind of work may be important in future development of data visualization and social science.	
 
 \begin{thebibliography}{10}
 
@@ -244,14 +249,20 @@ culpa qui officia deserunt mollit anim id est laborum.
   (ICWSM--12), (pp. 6--9).
   
 \bibitem[3]{iconosquare}
-  [3] http://iconosquare.com/
+  [3] Key metrics about your Instagram account\\ http://iconosquare.com/
   
 \bibitem[4]{simplymeasured}
-  [4] http://simplymeasured.com/freebies/instagram-analytics
+  [4] Free Instagram User Report\\ http://simplymeasured.com/freebies/instagram-analytics
   
 \bibitem[5]{instastats}
-  [5] https://github.com/rldw/instastats
+  [5] Instastats\\ https://github.com/rldw/instastats
+
+\bibitem[6]{aster}
+  [6] Aster Plot in D3\\ http://bl.ocks.org/bbest/2de0e25d4840c68f2db1
   
+\bibitem[7]{word}
+  [7] Word Cloud\\ https://www.jasondavies.com/wordcloud/
+    
 \end{thebibliography}
 
 \end{document}
