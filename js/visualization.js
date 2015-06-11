@@ -7,9 +7,9 @@ var bubble_map = new Datamap({
     highlightOnHover: false
   },
   fills: {
-    defaultFill: '#ABDDA4',
-    USA: 'blue',
-    high: 'red'
+    defaultFill: '#e7e2c1',
+    USA: '#012840',
+    high: '#bf8360'
   },
   data: {
     'ID': { fillKey: 'high' },

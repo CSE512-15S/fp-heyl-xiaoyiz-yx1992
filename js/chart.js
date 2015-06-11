@@ -1,5 +1,5 @@
-var width = 300,
-    height = 300,
+var width = 400,
+    height = 400,
     radius = Math.min(width, height) / 2,
     innerRadius = 0.3 * radius;
 var largestScore = 1.0;
@@ -18,7 +18,7 @@ function updateChart(name){
     .attr('class', 'd3-tip')
     .offset([0, 0])
     .html(function(d) {
-      return "<div>" + d.data.filter_name + ": <span style='color:orangered'>" + d.data.score + Math.floor(Math.random() * 10) + "</span></div>"
+      return "<div style='background:#824d3d; color:#f6364d'> <font color='#f6364d'>" +d.data.filter_name +": </font>" + "<span style='color:#fecd32'>" + d.data.score + Math.floor(Math.random() * 10) + "</span> </font> <font color='#80ce9a'>Images </font> </font> <font color='#4895ff'> Likes.</font> </div>"
       + "<img width='80px' src='" + d.data.img1 + "'>"
       + "<img width='80px' src='" + d.data.img2 + "'>"
       + "<img width='80px' src='" + d.data.img3 + "'>"
@@ -59,8 +59,8 @@ function updateChart(name){
       .enter().append("path")
         .attr("fill", function(d) {
           domain = null,
-          range = ["white", "green"],
-          color = d3.scale.linear().domain([0,largestLike]).range(["white","green"]);
+          range = ["#e7e2c1", "#bf8360"],
+          color = d3.scale.linear().domain([0,largestLike]).range(["#e7e2c1","#bf8360"]);
           return color(d.data.avg_like);
         })
         .attr("class", "solidArc")

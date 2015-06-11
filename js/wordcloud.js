@@ -11,7 +11,7 @@ function updateWordCloud (name) {
           if (d.avelike > maxLike) maxLike = d.avelike;
       });
 
-      d3.layout.cloud().size([400, 400])
+      d3.layout.cloud().size([800, 400])
           .words(tagData.map(function(d) {
               return {text: d[0], size: d[1]};
           }))
@@ -26,10 +26,10 @@ function updateWordCloud (name) {
 
 function draw(words) {
   d3.select("#wordcloud").append("svg")
-      .attr("width", 400)
+      .attr("width", 800)
       .attr("height", 400)
     .append("g")
-      .attr("transform", "translate(200,200)")
+      .attr("transform", "translate(400,200)")
     .selectAll("text")
       .data(words)
     .enter().append("text")

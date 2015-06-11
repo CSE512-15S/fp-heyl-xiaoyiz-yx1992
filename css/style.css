@@ -2,9 +2,9 @@
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 body, html { font-size: 100%; padding: 0; margin: 0; height: 100%;}
 
-.dark_grey {background-color: #444945;  padding: 20px 0 20px 0}
-.beige {background-color: #F2EDE7;  padding: 20px 0 20px 0}
-.light_grey{background-color: #F2EDE7; padding: 20px 0 20px 0}
+.dark_grey {background-color: #5185a6;  padding: 20px 0 20px 0}
+.beige {background-color: #FFFFFF;  padding: 20px 0 20px 0}
+.light_grey{background-color: #FFFFFF; padding: 20px 0 20px 0}
 .key{background-color: #E29782;  padding: 20px 0 20px 0}
 
 .subtitle {
@@ -28,7 +28,7 @@ body, html { font-size: 100%; padding: 0; margin: 0; height: 100%;}
 #header {
 	width:100%;
 	padding: 90px 0px 10px 0px;
-	height: 490px;
+	height: 390px;
 }
 
 .center {
@@ -42,13 +42,13 @@ body, html { font-size: 100%; padding: 0; margin: 0; height: 100%;}
 	font-family: apercubold, sans-serif;
 	font-weight: 600;
 	text-align: center;
-	width: 600px;
+	width: 1000px;
 	padding: 18px 0px 14px 0px;
-	color: #F2EDE7;
+	color: #FFFFFF;
 	text-transform: uppercase;
 	font-size: 54px;
 	border-top: solid;
-	border-color: #F2EDE7;
+	border-color: #FFFFFF;
 	border-bottom: solid;
 	letter-spacing: 7px;
 }
