@@ -8,3 +8,12 @@
 3. Xiaoyi Zhang xiaoyiz@uw.edu
 
 ## Project Name
+
+Instagram Data Analysis
+
+### Data set
+
+Instagram API
+![alt tag](img/dataset.png)
+
+### Description
