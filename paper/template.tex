@@ -31,7 +31,7 @@ Xiaoyi Zhang\thanks{e-mail:xiaoyiz@cs.washington.edu}\\Computer Science \& Engin
 \pdfauthor{Xin Yang}
 \pdfauthor{Xiaoyi Zhang}
 
-\keywords{radiosity, global illumination, constant time}
+\keywords{data visualization, instagram, filter, hashtag}
 
 \begin{document}
 
@@ -44,14 +44,9 @@ Xiaoyi Zhang\thanks{e-mail:xiaoyiz@cs.washington.edu}\\Computer Science \& Engin
 
 \begin{abstract}
 
-This project analyzes the relationship of Instagram filter data with location, number of likes and hashtag to give users filter suggestion on achieving more likes based on users' location and the photo content, and analyzes visual culture differences between the cities. It shows three types of data relationship: first, filter usage based on different cities; second, in each city the number of likes of each filter; third, in each city what hashtag are labeled most.
+Because of the spread of the Internet, social platforms bacome big data pools. From there we can learn about the trends, culture and hot topics.  This project focuses on analyzing the data from Instagram. It shows the relationship of Instagram filter data with location and number of likes to give users filter suggestion on achieving more likes based on their location. It also analyzes the popular hashtags in different locations to show visual culture differences between different cities. 
 
 \end{abstract}
-
-\begin{CRcatlist}
-  \CRcat{I.3.3}{Computer Graphics}{Three-Dimensional Graphics and Realism}{Display Algorithms}
-  \CRcat{I.3.7}{Computer Graphics}{Three-Dimensional Graphics and Realism}{Radiosity};
-\end{CRcatlist}
 
 \keywordlist
 
@@ -66,24 +61,19 @@ This project analyzes the relationship of Instagram filter data with location, n
 
 \section{Introduction}
 
-You may have ever scrolled through the Instagram filter list back and force worrying about which one to use, and how to make more people like it. But since culture background and contents varies a lot from photo to photo, it is hard to make a simple suggestion that let everyone like it. To solve this problem our project analyzes the Instagram filter data based on location, likes and hashtag.
+As "a picture is worth a thousand words", more and more people are sharing their daily life, personal interests, news and events using images on social platform. Instagram is such a platform which is a popular mobile photo sharing application. It launched in October 2010, and rapidly gained popularity, with over 100 million active users as of April 2012 and over 300 million as of December 2014. Because of these huge amount of information in the dataset of Instagram, and we are interested in analyzing and visualizing the patterns of them. 
 
-This project analyzes how filter usage are distributed in 50 cities, which are the cities with most population in each state of United States, and it also shows the number of likes for each filter. This shows the filter preference and how culture varies at different places. It also analyzes the number of hashtags been labeled on the posts for each city. 
+This project is focusing on analyzing Instagram data to learn about the culture differences between different places. This project analyzes how filter usage are distributed in 50 cities, which are the cities with most population in each state of United States. This give us the information about how filter preference and vision culture varies in different states. The project also analyzes the number of hashtags been labeled on the posts for each city. It shows the popular hashtags for each city which reveal the popular event or hot terms in different cities.
 
-The goal of this project is to give useful filter suggestion and showing visual culture and content differences for different states. 
+While you are using the Instagram, you may also have ever scrolled through the Instagram filter list back and force worrying about which one to use, and how to make more people like it. But since culture background and contents varies a lot from photo to photo, it is hard to make a simple suggestion that let everyone like it. Our project also analyzes the Instagram filter data based on location and like to help you solve this problem.
+
+The goal of this project is to learn about visual culture and content differences to help catch both the artistic trends and event trends for different places. It can also help user to make better filter selection to improve photo quality and reach more likes.   
 
 \section{Related Work}
 
-Citations can be done this way~\cite{Jobs95} or this more concise 
-way~\shortcite{Jobs95}, depending upon the application.
+Due to the popularity and the amount of data information, there are couple groups of people are also interested in the culture information reflected in the Instagram photo data. Hochman's Zooming into an Instagram city \cite{hochman13} \cite{hochman12} visualizes and analyzes samples from a data set of about 550,000 Instagram photos from New York City and Tokyo, by applying visualization and Cultural Analytics techniques. They show all the images in the collection. They download data based on latitude and longitude criteria and use specified tools to analyze the data. One interesting result of this paper is that there seem to be reoccurring spatio-temporal visual deviations in a specific time period and a set place. Based on those large sets of Instagram photos, they show how visual social media can be analyzed at multiple spatial and temporal scales. They also present analysis of social and cultural dynamics in specific places and particular times, and introduce new visualization techniques which can show tens of thousands of individual images sorted by their metadata or algorithmically extracted visual features. But as they only focuses on photo color and photo style, but our project cares more anout the label information and filter data. They shows the differences of visual styles in different time different cities, while we are analyzing the exact events and objects that people are captured and marked in different cities.
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+There are also some existing analytical tools for Instagram. Iconosquare (formerly Statigram) \cite{iconosquare} provides useful statistics about Instagram. It can also respond to comments and monitor hashtags. Instagram-analytics \cite[simplymeasured] contains huge amount of raw instagram data for users. Instastats \cite{instastats} is python scripts to pull data from Instagram API. Those work shows us what data information are available from Instagram and our project uses some of the tools to get our desired data for analysis.
 
 \section{Methods}
 
@@ -127,10 +117,30 @@ reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.
 
-\section*{Acknowledgements}
 
-To Robert, for all the bagels.
+\begin{thebibliography}{10}
 
 \bibliographystyle{acmsiggraph}
 \bibliography{template}
+
+\bibitem[1]{hochman13}
+  [1] Hochman, Nadav \& Manovich, Lev. (2013) Zooming into an Instagram City: Reading the local through social media,
+  \emph{ First Monday.}
+  
+\bibitem[2]{hochman12}
+  [2] Hochman, Nadav \& Schwartz, Raz. (2012) Visualizing instagram: Tracing cultural visual rhythms,
+  \emph{Proceedings of the Workshop on Social Media Visualization (SocMedVis) in conjunction with the Sixth International AAAI Conference on Weblogs and Social Media.}
+  (ICWSM--12), (pp. 6--9).
+  
+\bibitem[3]{iconosquare}
+  [3] http://iconosquare.com/
+  
+\bibitem[4]{simplymeasured}
+  [4] http://simplymeasured.com/freebies/instagram-analytics
+  
+\bibitem[5]{instastats}
+  [5] https://github.com/rldw/instastats
+  
+\end{thebibliography}
+
 \end{document}
