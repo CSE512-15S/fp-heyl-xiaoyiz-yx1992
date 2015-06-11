@@ -18,7 +18,7 @@ function updateChart(name){
     .attr('class', 'd3-tip')
     .offset([0, 0])
     .html(function(d) {
-      return "<div style='background:#824d3d; color:#f6364d'> <font color='#f6364d'>" +d.data.filter_name +": </font>" + "<span style='color:#fecd32'>" + d.data.score + Math.floor(Math.random() * 10) + "</span> </font> <font color='#80ce9a'>Images </font> </font> <font color='#4895ff'> Likes.</font> </div>"
+      return "<div style='color:#f6364d'> <font color='#f6364d'>" +d.data.filter_name +": </font>" + "<span >" + d.data.score + Math.floor(Math.random() * 10) + "</span> </font> <font color='#80ce9a'>Images </font> </font> " + d.data.avg_like + " <font color='#4895ff'> Average Likes.</font> </div>"
       + "<img width='80px' src='" + d.data.img1 + "'>"
       + "<img width='80px' src='" + d.data.img2 + "'>"
       + "<img width='80px' src='" + d.data.img3 + "'>"
