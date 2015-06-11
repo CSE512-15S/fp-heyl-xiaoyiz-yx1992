@@ -31,7 +31,7 @@ Tags: clicking the city dot shows a words cloud with most popular tags shown up.
 
 ## Running Instructions
 
-Our project page is at http://cse512-15s.github.io/fp-Heyl-xiaoyiz-yx1992/
+Our project page is at http://cse512-15s.github.io/fp-heyl-xiaoyiz-yx1992/
 
 Access our visualization at http://www.xiaoyizhang.me/512
 
