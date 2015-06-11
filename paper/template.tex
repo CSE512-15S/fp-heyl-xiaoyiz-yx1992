@@ -182,17 +182,17 @@ In the tags visualization result, we want to show the average likes of photos us
 We design our tool color theme using Instagram color patterns since we are analyzing Instagram data, this can provide users a more related and clear connection between the data information and the tool. At the top of the page it shows a brief introduction of the project and overall functions to gives users a understanding about how to navigate and explore the tool.
 
 \subsubsection{Location - Map}
-The project uses the map of United States. The color of the map is also chosen based on the Instagram color, the states with darker brown color are the top ten most Instagram posts states in the given time period, which is the recent past week. Lighter yellow color are the rest states. Since darker color presents more and higher density, so we choose darker color to represent more posts. Using dark blue color as the city dot is to form a contrast with the yellow and match the Instagram color theme.
+
 \begin{figure}[ht]
   \centering
 \includegraphics[width=3in]{images/map}
   \caption{Map design}
   \label{like-filter}
 \end{figure}
+The project uses the map of United States. The color of the map is also chosen based on the Instagram color, the states with darker brown color are the top ten most Instagram posts states in the given time period, which is the recent past week. Lighter yellow color are the rest states. Since darker color presents more and higher density, so we choose darker color to represent more posts. Using dark blue color as the city dot is to form a contrast with the yellow and match the Instagram color theme.
+
 
 \subsubsection{Filter - Aster Chart}
-
-When click on the city dot, an Aster chart\cite{aster} that shows the relationship between the filters and likes for the selected city shows up. Larger slice means more posts for that filter and smaller slice means less posts for that filter, because the size can be related to the amount information. As for the color, lighter color of the chart slice means less likes for that filter, and darker color means more likes for that filter. Most liked one uses the brown color and the least liked one uses the yellow color where the colors are match the color of the map. The color for the rest filters are the color within this range and equally scaled. When mouse hovering on the slice, the slice turns into red color to use contrast color to indicate one filter type is selected, and a window pop up near by the mouse showing the detail information with the number of posts and likes and sample images for selected filter type. The color of the text information are using couple bright colors selected from Instagram logo which can gives the sense of users that they are viewing Instagram posts and draw some attention on the text because of the brightness. 
 
 \begin{figure}[ht]
   \centering
@@ -201,14 +201,47 @@ When click on the city dot, an Aster chart\cite{aster} that shows the relationsh
   \label{like-filter}
 \end{figure}
 
+When click on the city dot, an Aster chart\cite{aster} that shows the relationship between the filters and likes for the selected city shows up. Larger slice means more posts for that filter and smaller slice means less posts for that filter, because the size can be related to the amount information. As for the color, lighter color of the chart slice means less likes for that filter, and darker color means more likes for that filter. Most liked one uses the brown color and the least liked one uses the yellow color where the colors are match the color of the map. The color for the rest filters are the color within this range and equally scaled. When mouse hovering on the slice, the slice turns into red color to use contrast color to indicate one filter type is selected, and a window pop up near by the mouse showing the detail information with the number of posts and likes and sample images for selected filter type. The color of the text information are using couple bright colors selected from Instagram logo which can gives the sense of users that they are viewing Instagram posts and draw some attention on the text because of the brightness. 
+
 \subsubsection{Hashtags - Word Cloud}
-After clicking the city dot, there is also a words cloud\cite{word} with tags showing underneath the map. Larger size of text means more posts with that tag and smaller size of text means less posts with that tag. The color of the text are all bright colors with large contrast to distinguish words from words and also for user easy to read.
 \begin{figure}[ht]
   \centering
 \includegraphics[width=3in]{images/word}
   \caption{Word cloud design}
   \label{like-filter}
 \end{figure}
+After clicking the city dot, there is also a words cloud\cite{word} with tags showing underneath the map. Larger size of text means more posts with that tag and smaller size of text means less posts with that tag. The color of the text are all bright colors with large contrast to distinguish words from words and also for user easy to read.
+
+
+\section{Results}
+Our final work can be found in http://xiaoyizhang.me/512 . Basically, the top 10 states with most instagram posts can be seen directly as the darker parts on the map. Users can choose one city to see the hot hashtags people are  using. Also users can see the amount and the popularity of different filters.
+
+For the choice of filters, as we have mentioned, normal filter is most frequently used. In every city, the number of photos in  normal filter is time times of any other filters. However, with respect to average, normal filter does not win everywhere. For example, in  Charleston, the Lark filter achieves more average likes. So it is possible for advanced users to obtain better effect with interesting filters. 
+
+\begin{figure}[ht]
+  \centering
+\includegraphics[width=3in]{images/c}
+  \caption{Illustration for Charleston}
+  \label{like-filter}
+\end{figure}
+
+
+For the hot words, we can observe culture difference between different cities, Of course, the name of the location is a quite popular hashtag; however, if you check the word cloud of LA, you can find ?graduation? and ?fashion?, which implies LA is a energetic city; on the other hand, for New York, you can see the names of a lot of Japanese animations. One possible explanation is that New York may be holding an anime exposition at that time..  
+
+\begin{figure}[ht]
+  \centering
+\includegraphics[width=3in]{images/la}
+  \caption{Illustration for LA}
+  \label{like-filter}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+\includegraphics[width=3in]{images/ny}
+  \caption{Illustration for NY}
+  \label{like-filter}
+\end{figure}
+
 
 \section{Discussion}
 
