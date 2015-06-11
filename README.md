@@ -31,10 +31,6 @@ Tags: clicking the city dot shows a words cloud with most popular tags shown up.
 
 ## Running Instructions
 
-Access our visualization at http://cse512-15s.github.io/fp-Heyl-xiaoyiz-yx1992/
+Our project page is at http://cse512-15s.github.io/fp-Heyl-xiaoyiz-yx1992/
 
-OR
-
-Clone the repo, run "python -m SimpleHTTPServer 8080" in the terminal under the repo directory.
-
-Open browser and navigate to http://localhost:8080
+Access our visualization at http://www.xiaoyizhang.me/512
