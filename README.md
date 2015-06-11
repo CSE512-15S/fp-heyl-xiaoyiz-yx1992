@@ -31,10 +31,37 @@ Tags: clicking the city dot shows a words cloud with most popular tags shown up.
 
 ## Running Instructions
 
-Access our visualization at http://cse512-15s.github.io/fp-Heyl-xiaoyiz-yx1992/
+Access our visualization at http://xiaoyizhang.me/fp/
 
 OR
 
 Clone the repo, run "python -m SimpleHTTPServer 8080" in the terminal under the repo directory.
 
 Open browser and navigate to http://localhost:8080
+
+## Story Board
+
+![alt tag](img/storyboard1.png)
+
+Storyboard 1: There is a map for user to explore, different color indicate differnt most popular filter type indifferent countryies. When mouse click on that country, a window pop up showing the detail information of each filter being used in this country.
+
+![alt tag](img/storyboard2.png)
+
+Storyboard 2: When user hit a country, a chart shows up with the filter usage details. Larger region means more posts and darker color means more likes for that filter on average. Also, if user input some hashtag, the filter result related to that hashtag shows as a new chart.
+
+### Changes between Storyboard and the Final Implementation
+
+During the implementation we found our initial design that using global map couldn't work out, since the location for the country is too broad and Instagram posts location information are stored as longitude and latitude, so we need to sample lots of data to get the most popular filter information for the country. And also not all the countries are using Instagram, in this case there will be too many countries are blank. So we change the map to US map and compare between the states.
+
+In the final implementation, instead of allowing user to search the hashtag information to get the filter data, we implement a words cloud that showing most popular hashtags within that city. This is because when we analyze the hashtag information we got, we realize that sample we have does not have enough filter information, most tags only have one or two filters, in this case the comparsion of filters between different tags will be meaningless. So we change to show popular tags which can also reveal some popular event and social differences between cities.
+
+
+## Development Process
+Firstly, we browsed the available data sets and searched for interesting ones. For our interested data sets we try to come up a design with it and see if it works well. We select Instagram data sets, since Instagram is quite popular and we all use that. Xin processed the data to our desired data format. Based on the data selected, we design an interactive data visualization story board. Basically, it is an intractable US map with clickable city dots. Xiaoyi implement the map interaction function. After we got the interactive map works, Yanling changed the webpage and detail design. We did the presentation and writeup together. 
+
+Yanling He: Design and implement the page layout, draw story board, presentation poster and writeup
+
+Xiaoyi Zhang: Implement interactive map with PI chart and hovering functions, presentation and writeup
+
+Xin Yang: Found data set and processing data, presentation and writeup
+
