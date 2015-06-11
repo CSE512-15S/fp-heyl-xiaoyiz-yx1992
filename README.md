@@ -9,7 +9,7 @@
 
 ## Project Name
 
-Instagram Data Analysis
+Instagram Post Data Analysis
 
 ### Data set
 
