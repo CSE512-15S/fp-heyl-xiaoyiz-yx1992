@@ -77,57 +77,48 @@ There are also some existing analytical tools for Instagram. Iconosquare (former
 
 \section{Methods}
 
+We implement a software tool for user to navigate the Instagram data. The implementation details are divided into four parts: data preparation: getting data from Instagram and sorted our desired data into useable cvs format; data analysis: we use table and chart to pre-analyze the data; function design: ; visual style design:.
+
 \subsection{Data Preparation}
-\subsection{Data Preparation}
 
-In order to find interesting pattern from the raw data, we use python script to process the data. We first explore the relationship between filter and number of likes. We ignore the location and get the whole table of filter, number of photos with this filter, maximal likes, average likes and total number of likes.  With the help of Tableau, we can see the following result in figure \ref{like-filter},\ref{normal} and \ref{no-normal}.
+First, we get Instagram data from Instagram API which allows us to specify the scope of the access we are requesting from the user. It provides four types of scopes: basic - to read data on a user’s behalf, e.g. recent media, following lists (granted by default); comments - to create or delete comments on a user’s behalf; relationships - to follow and unfollow accounts on a user’s behalf; likes - to like and unlike media on a user’s behalf. In our project, we are insterted in the basic and likes scopes including filter types, tags, likes, imagel link and location information. We get the data through API endpoint and use instastats python script to pull data. The example data is shown below:
 
+"data": [\{\\
+\text{\quad}        "filter": "Earlybird",\\
+\text{\quad}        "tags": ["expobar"],\\
+\text{\quad}        "likes": \{\\
+\text{\quad \quad}              "count": 35,\\
+\text{\quad}        \},\\
+\text{\quad}        "link": "http://instagr.am/p/BUS3X/",\\
+\text{\quad}        "location": \{\\
+\text{\quad \quad}            "latitude": 37.780885099999999,\\
+\text{\quad \quad}            "longitude": -122.3948632,\\
+\text{\quad}        \}\\
+    \}]
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=3in]{images/sample_all_filter-like}
-  \caption{Likes and filters in Seattle}
-  \label{like-filter}
-\end{figure}
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=3in]{images/sample_all_number-filter_sorted}
-  \caption{Number of photos in different filters}
-  \label{normal}
-\end{figure}
-\begin{figure}[ht]
-  \includegraphics[width=3in]{images/sample_all_number-filter_sorted_no-normal}
-  \centering
-  \caption{Number of photos in different filters. Normal excluded}
-  \label{no-normal}
+  \includegraphics[width=1.5in]{images/samplefigure}
+  \caption{Sample illustration.}
 \end{figure}
 
+\subsection{Data Analysis}
 
+\subsection{Function Design}
 
-We can see that the normal filter appears dominantly. This is probably because normal filter is the default setting of Instagram. Therefore if people are not very familiar with Instagram, then they will hardly pick up advanced filters. So many filters use normal filter that most popular photos are using normal filters. If we remove the effect of normal filters, we can see that the curve of  number of photos on filters looks like an exponential function, which is an evidence that it may  follow the power law. It is reasonable, since power law is a common phenomenon in social network.
-In this way, we may design a recommendation system for filters:
-since normal filter is so common,
-we can help users to use other advanced filters,
-in this way users may obtain sense of accomplishment while achieving lots of likes.
+\subsection{Visual Design}
 
+\section{Results}
 
-We also study the relationship between the likes and the hashtag. We create the table of word, total like, average like and maximal like for each city. The following chart is the result for Seattle.
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=3in]{images/sample_Seattle_like_word}
-  \caption{Hot hashtags in Seattle}
-\end{figure}
-We do not find interesting pattern in the chart. We think the main reason is that we do not have enough data. Most hashtag appear only 1 or 2 times, which is too few to analyze. However, we can still observe that hashtags with popular photos are “meaningful”, that is , we can see some kind of trend from the hot hashtags. This can be used to notice users what is happening now in the city.
+\section{Discussion}
 
+\subsection{Results Discussion}
 
-
-\section{Future Work}
-
-\subsection{Computer Vision Analysis}
+\subsection{Future Work}
 Since not all the photos are labeled with hashtags and not all the hashtags are correctly showing the content in each photo, using computer vision to analysis the real photo content, the style of the scenes and the major color theme may have stronger correlation with the filter types.
-\subsection{Relationship with Time}
+
 As the time changes people’s vision preference may also changes, so the preference of filters may shifts as the time changes, we can learn the relationship with filters, likes and time to learn how visual preference changes and give out more current filter suggestion.
-\subsection{World Map}
+
 Since all the location analysis are based on the United States, so culture variety may be less between each cities, to extend the data to world based to learn some culture different between continents may give us more meaningful data. But world-wise spread of the Instagram usage may be the limit of this extension.
 
 \section{Conclusion}
