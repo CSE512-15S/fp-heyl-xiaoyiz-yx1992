@@ -69,6 +69,13 @@ While you are using the Instagram, you may also have ever scrolled through the I
 
 The goal of this project is to learn about visual culture and content differences to help catch both the artistic trends and event trends for different places. It can also help user to make better filter selection to improve photo quality and reach more likes.   
 
+\begin{figure}[ht]
+  \centering
+\includegraphics[width=3in]{images/vis}
+  \caption{Word cloud design}
+  \label{like-filter}
+\end{figure}
+
 \section{Related Work}
 
 Due to the popularity and the amount of data information, there are couple groups of people are also interested in the culture information reflected in the Instagram photo data. Hochman's Zooming into an Instagram city \cite{hochman13} \cite{hochman12} visualizes and analyzes samples from a data set of about 550,000 Instagram photos from New York City and Tokyo, by applying visualization and Cultural Analytics techniques. They show all the images in the collection. They download data based on latitude and longitude criteria and use specified tools to analyze the data. One interesting result of this paper is that there seem to be reoccurring spatio-temporal visual deviations in a specific time period and a set place. Based on those large sets of Instagram photos, they show how visual social media can be analyzed at multiple spatial and temporal scales. They also present analysis of social and cultural dynamics in specific places and particular times, and introduce new visualization techniques which can show tens of thousands of individual images sorted by their metadata or algorithmically extracted visual features. But as they only focuses on photo color and photo style, but our project cares more anout the label information and filter data. They shows the differences of visual styles in different time different cities, while we are analyzing the exact events and objects that people are captured and marked in different cities.
@@ -77,11 +84,21 @@ There are also some existing analytical tools for Instagram. Iconosquare (former
 
 \section{Methods}
 
-We implement a software tool for user to navigate the Instagram data. The implementation details are divided into four parts: data preparation: getting data from Instagram and sorted our desired data into useable cvs format; data analysis: we use table and chart to pre-analyze the data; function design: ; visual style design:.
+We implement a software tool for user to navigate the Instagram data. The implementation details are divided into four parts: data preparation: getting data from Instagram and sorted our desired data into useable csv format; Data analysis: we use table and chart to pre-analyze the data; Function design: our system filters data based on location, and visualizes filter and tag data; Visual style design: our system uses map to display location data, uses Aster chart to visualize filter data, and uses word cloud to visualize hashtag data.
 
 \subsection{Data Preparation}
 
-First, we get Instagram data from Instagram API which allows us to specify the scope of the access we are requesting from the user. It provides four types of scopes: basic - to read data on a user’s behalf, e.g. recent media, following lists (granted by default); comments - to create or delete comments on a user’s behalf; relationships - to follow and unfollow accounts on a user’s behalf; likes - to like and unlike media on a user’s behalf. In our project, we are insterted in the basic and likes scopes including filter types, tags, likes, imagel link and location information. We get the data through API endpoint and use instastats python script to pull data. The example data is shown below:
+First, we get Instagram data from Instagram API which allows us to specify the scope of the access we are requesting from the user. It provides four types of scopes:
+
+basic - to read data on a user's behalf, e.g. recent media, following lists (granted by default);
+
+comments - to create or delete comments on a user'��s behalf;
+
+relationships - to follow and unfollow accounts on a user's behalf;
+
+likes - to like and unlike media on a user's behalf.
+
+In our project, we are insisting in the basic and likes scopes including filter types, tags, likes, image link and location information. We get the data through API endpoint and use instastats python script to pull data. The example data is shown below:
 
 "data": [\{\\
 \text{\quad}        "filter": "Earlybird",\\
@@ -96,6 +113,7 @@ First, we get Instagram data from Instagram API which allows us to specify the s
 \text{\quad}        \}\\
     \}]
 
+We found data collection process is painful. Instagram?s API has unpredictable behavior. For example, even if we indicate the number of post we want in query, its API will still give us different number of result in each run. Thus, in order to get enough data, we need to run multiple times and remove duplicate results.
 
 
 \subsection{Data Analysis}
@@ -148,7 +166,7 @@ User can click on dark blue dot, which is the city with largest population in a 
 \subsubsection{Filter}
 In the filter visualization result, we want to show the average likes of photos using these filters. We also want to show how many photos using those filters, which indicates the popularity of each filter.
 
-\subsubsection{Tags}
+\subsubsection{Hashtags}
 In the tags visualization result, we want to show the average likes of photos using these tags.
 
 \subsection{Visual Design}
@@ -175,8 +193,8 @@ When click on the city dot, an Aster chart that shows the relationship between t
   \label{like-filter}
 \end{figure}
 
-\subsubsection{Tag - Word Cloud}
-
+\subsubsection{Hashtags - Word Cloud}
+After clicking the city dot, there is also a words cloud with tags showing underneath the map. Larger size of text means more posts with that tag and smaller size of text means less posts with that tag. The color of the text are all bright colors with large contrast to distinguish words from words and also for user easy to read.
 \begin{figure}[ht]
   \centering
 \includegraphics[width=3in]{images/word}
