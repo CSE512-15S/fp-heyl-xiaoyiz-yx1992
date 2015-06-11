@@ -77,34 +77,48 @@ There are also some existing analytical tools for Instagram. Iconosquare (former
 
 \section{Methods}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+We implement a software tool for user to navigate the Instagram data. The implementation details are divided into four parts: data preparation: getting data from Instagram and sorted our desired data into useable cvs format; data analysis: we use table and chart to pre-analyze the data; function design: ; visual style design:.
+
+\subsection{Data Preparation}
+
+First, we get Instagram data from Instagram API which allows us to specify the scope of the access we are requesting from the user. It provides four types of scopes: basic - to read data on a user’s behalf, e.g. recent media, following lists (granted by default); comments - to create or delete comments on a user’s behalf; relationships - to follow and unfollow accounts on a user’s behalf; likes - to like and unlike media on a user’s behalf. In our project, we are insterted in the basic and likes scopes including filter types, tags, likes, imagel link and location information. We get the data through API endpoint and use instastats python script to pull data. The example data is shown below:
+
+"data": [\{\\
+\text{\quad}        "filter": "Earlybird",\\
+\text{\quad}        "tags": ["expobar"],\\
+\text{\quad}        "likes": \{\\
+\text{\quad \quad}              "count": 35,\\
+\text{\quad}        \},\\
+\text{\quad}        "link": "http://instagr.am/p/BUS3X/",\\
+\text{\quad}        "location": \{\\
+\text{\quad \quad}            "latitude": 37.780885099999999,\\
+\text{\quad \quad}            "longitude": -122.3948632,\\
+\text{\quad}        \}\\
+    \}]
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=1.5in]{images/samplefigure}
   \caption{Sample illustration.}
 \end{figure}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
 
-\section{Future Work}
+\subsection{Data Analysis}
 
-\subsection{Computer Vision Analysis}
+\subsection{Function Design}
+
+\subsection{Visual Design}
+
+\section{Results}
+
+\section{Discussion}
+
+\subsection{Results Discussion}
+
+\subsection{Future Work}
 Since not all the photos are labeled with hashtags and not all the hashtags are correctly showing the content in each photo, using computer vision to analysis the real photo content, the style of the scenes and the major color theme may have stronger correlation with the filter types.
-\subsection{Relationship with Time}
+
 As the time changes people’s vision preference may also changes, so the preference of filters may shifts as the time changes, we can learn the relationship with filters, likes and time to learn how visual preference changes and give out more current filter suggestion.
-\subsection{World Map}
+
 Since all the location analysis are based on the United States, so culture variety may be less between each cities, to extend the data to world based to learn some culture different between continents may give us more meaningful data. But world-wise spread of the Instagram usage may be the limit of this extension.
 
 \section{Conclusion}
